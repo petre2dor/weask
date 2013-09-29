@@ -1,0 +1,163 @@
+<head>
+	<title>Crowd Interview</title>
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="../" class="navbar-brand">Crowd Interview</a>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="/schedule">Schedule</a>
+					</li>
+					<li>
+						<a href="/old">Old interviews</a>
+					</li>
+					<li>
+						<a href="/help">Help</a>
+					</li>
+					<li>
+						<a href="/about">About</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a>{{loginButtons align="right"}}</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<div class="container">
+      <div class="bs-docs-section">
+      	{{> interviewHeader}}
+
+      	<div class="row">
+      		<div class="col-lg-6">
+      			{{> video}}
+      			{{> addQuestion}}
+      			{{> newQuestions}}
+      		</div>
+      		<div class="col-lg-6">
+      			{{> topQuestions}}
+      		</div>
+      		<div class="col-lg-6">
+      			{{> bottomQuestions}}
+      		</div>
+      	</div>
+      </div>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+  </div>
+</body>
+
+<template name="interviewHeader" >
+	<div class="page-header">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1>First interview</h1>
+					<p class="lead">Welcome! Hope you like this tool.</p>
+				</div>
+				<div class="col-lg-6">
+					{{> currentQuestion}}
+				</div>
+			</div>
+		</div>
+</template>
+
+<template name="video" >
+	<div id="videoWrapper">
+		<iframe width="420" height="315" src="http://www.youtube.com/embed/P_W-3Q8eS5k" frameborder="0" allowfullscreen></iframe>
+	</div>
+</template>
+
+<template name="addQuestion">
+	<div class="bs-example">
+	    <div id="inputQuestionWrapper" class="form-group">
+	      	<span class="help-block">Add a new question. Please use minimum 30 chars and maximum 100.</span>
+	      	<textarea id="questionText" class="form-control" rows="3"></textarea>
+			<button class="btn btn-primary pull-right">Submit</button>
+	    </div>
+  </div>
+</template>
+
+<template name="newQuestions">
+	<div>
+		<h2>New Questions</h2>
+		<ul class="list-group">
+			{{#each questions}}
+				<li class="list-group-item">
+				{{> questionDetails}}
+				</li>
+			{{else}}
+				No questions yet.	
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="topQuestions">
+	<div>
+		<h2>Top Questions</h2>
+		<ul class="list-group">
+			{{#each questions}}
+				<li class="list-group-item">
+				{{> questionDetails}}
+				</li>
+			{{else}}
+				No questions yet.	
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="bottomQuestions">
+	<div>
+		<h2>Bottom Questions</h2>
+		<ul class="list-group">
+			{{#each questions}}
+				<li class="list-group-item">
+				{{> questionDetails}}
+				</li>
+			{{else}}
+				No questions yet.	
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+
+<template name="currentQuestion">
+	<div class="alert alert-success">
+		<h2>Answering now:</h2>
+		{{#each questions}}
+			#{{orderNumber}} {{text}} 
+		{{/each}}
+	</div>
+</template>
+
+<template name="questionDetails">
+	#{{orderNumber}} {{text}} 
+	<button id="respond">Respond</button> 
+	<span class="badge"> {{down}} <button id="down">down</button> </span>
+	<span class="badge"> {{up}} <button id="up">up</button> </span>
+</template>

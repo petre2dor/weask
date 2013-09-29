@@ -1,0 +1,21 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "bootstrap-3": {},
+      "mongo-counter": {}
+    },
+    "packages": {
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v0.3.4",
+        "commit": "680c056e849d079a1b669247f347da2b443aad91"
+      },
+      "mongo-counter": {
+        "git": "https://github.com/awwx/meteor-mongo-counter.git",
+        "tag": "v1.1.0",
+        "commit": "9a0710543cec7c192e38d5acc54cf3b0a9fbcb20"
+      }
+    }
+  }
+}
