@@ -2073,10 +2073,10 @@ input.btn-block[type="submit"], input.btn-block[type="reset"], input.btn-block[t
     content: "";
 }
 .glyphicon-thumbs-up:before {
-    content: "";
+    content: "\e125";
 }
 .glyphicon-thumbs-down:before {
-    content: "";
+    content: "\e126";
 }
 .glyphicon-hand-right:before {
     content: "";

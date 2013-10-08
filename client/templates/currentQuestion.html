@@ -1,0 +1,8 @@
+<template name="currentQuestion">
+	<div class="alert alert-success">
+		<h2>Answering now:</h2>
+		{{#each questions}}
+			#{{orderNumber}} {{text}} 
+		{{/each}}
+	</div>
+</template>

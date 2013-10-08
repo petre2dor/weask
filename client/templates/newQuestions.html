@@ -1,0 +1,14 @@
+<template name="newQuestions">
+	<div>
+		<h2>New Questions</h2>
+		<ul class="list-group">
+			{{#each questions}}
+				<li class="list-group-item">
+				{{> questionDetails}}
+				</li>
+			{{else}}
+				No questions yet.	
+			{{/each}}
+		</ul>
+	</div>
+</template>
