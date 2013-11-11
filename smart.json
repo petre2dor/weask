@@ -1,6 +1,7 @@
 {
   "packages": {
     "bootstrap-3": {},
-    "mongo-counter": {}
+    "mongo-counter": {},
+    "iron-router": {}
   }
 }
